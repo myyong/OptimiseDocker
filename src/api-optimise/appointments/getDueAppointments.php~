@@ -1,0 +1,12 @@
+include '/utilities.php';
+include '/config.php';
+
+$connection = db_connect(OPTIMISE_DB);
+$optimise = $connection->selectCollection(OPTIMISE_TABLE);
+
+$cursor = $optimise->find(array (
+  'PRTRT' => 'MRI',
+  'DOMAIN' => 'PR',
+));
+
+var_dump($cursor);
